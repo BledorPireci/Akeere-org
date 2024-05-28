@@ -1,0 +1,103 @@
+.card {
+  background-color: var(--firstCardColor);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: calc(33.333% - 20px);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: padding 0.3s, width 0.3s;
+  .cardWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .imgContainer {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 15px;
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+
+    .texts {
+      .cardTitle {
+
+        h3 {
+          font-size: 24px;
+          color: #333;
+          margin: 0;
+          padding-bottom: 10px;
+          transition: font-size 0.3s;
+        }
+      }
+
+      .descrip {
+        h5 {
+          font-size: 16px;
+          color: #666;
+          font-weight: normal;
+          margin: 0;
+          line-height: 1.5;
+          transition: font-size 0.3s;
+        }
+      }
+    }
+  }
+
+  .leaf {
+    margin-top: 20px;
+
+    img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  // Responsive design
+  @media (max-width: 1200px) {
+    width: calc(50% - 20px);
+
+    .cardWrapper .texts .cardTitle h3 {
+      font-size: 22px;
+    }
+
+    .cardWrapper .texts .descrip h5 {
+      font-size: 15px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: calc(100% - 20px);
+
+    .cardWrapper .texts .cardTitle h3 {
+      font-size: 20px;
+    }
+
+    .cardWrapper .texts .descrip h5 {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    padding: 15px;
+
+    .cardWrapper .texts .cardTitle h3 {
+      font-size: 18px;
+    }
+
+    .cardWrapper .texts .descrip h5 {
+      font-size: 13px;
+    }
+
+    .leaf img {
+      width: 25px;
+      height: 25px;
+    }
+  }
+}

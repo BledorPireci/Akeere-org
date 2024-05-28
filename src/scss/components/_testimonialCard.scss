@@ -1,0 +1,77 @@
+.testimonialCard {
+  width: 300px;
+  height: 400px;
+  background-color: var(--thirdCardColor);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  padding: 15px;
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .cardPhoto {
+    width: 40px;
+    height: 40px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+    }
+  }
+
+  .cardText {
+    font-size: 14px;
+    color: var(--blackTextColor);
+    letter-spacing: 1px;
+    max-width: calc(100% - 15px);
+  }
+
+  .cardAuthor {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .imgWrapper {
+      width: 30px;
+      height: 30px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+
+    h3 {
+      color: var(--blackTextColor);
+      font-weight: normal;
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    padding: 10px;
+
+    .cardText {
+      font-size: 12px;
+    }
+
+    .cardAuthor h3 {
+      font-size: 14px;
+    }
+  }
+}

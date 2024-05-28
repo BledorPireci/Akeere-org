@@ -1,0 +1,63 @@
+.container {
+  width: calc(100% - 60px); // Full width minus the left and right margins
+  margin: 0 30px; // 30px margin on the left and right
+  overflow: hidden; // Hide overflowing content
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    .imgContainer {
+      display: flex;
+      animation: scroll 20s linear infinite; // Adjusted animation speed for better responsiveness
+
+      .imgBox {
+        min-width: 120px;
+        height: 120px;
+        margin-right: 150px; // Adjust the margin between images
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: calc(100% - 40px); // Reduce margins on smaller screens
+    margin: 0 20px;
+
+    .wrapper .imgContainer .imgBox {
+      min-width: 100px;
+      height: 100px;
+      margin-right: 100px; // Adjust the margin between images
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: calc(100% - 20px); // Further reduce margins on very small screens
+    margin: 0 10px;
+
+    .wrapper .imgContainer .imgBox {
+      min-width: 80px;
+      height: 80px;
+      margin-right: 80px; // Adjust the margin between images
+    }
+  }
+}

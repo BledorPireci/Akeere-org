@@ -1,0 +1,85 @@
+.accordion-wrapper {
+  width: 100%;
+
+  .accordion-btn-wrapper {
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .accordion-btn {
+    font-size: 18px;
+    display: block;
+    margin: 0;
+    text-align: left;
+    cursor: pointer;
+    width: 100%;
+    padding: 38px 90px;
+    background: var(--firstCardColor);
+    border: 1px solid #f1f1f1;
+    box-shadow: 0 4px 22px rgba(41, 41, 68, 0.05);
+    border-radius: 10px;
+    position: relative;
+    color: var(--linksText-color);
+
+    span {
+      word-wrap: break-word;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 540px) {
+      width: 100%;
+      text-align: left;
+      padding: 20px 40px 20px 20px;
+    }
+
+    .btn-accordion-right-icon {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 36px;
+
+      @media (max-width: 540px) {
+        position: static;
+        margin-bottom: 20px;
+        width: 25px;
+        transform: none;
+        display: block;
+      }
+    }
+
+    .btn-accordion-left-icon {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 36px;
+
+      @media (max-width: 540px) {
+        right: -11px;
+        top: 35%;
+      }
+    }
+  }
+
+  .panel {
+    display: block;
+    align-items: center;
+    width: 100%;
+    background: var(--firstCardColor);
+    color: var(--linksText-color);
+    box-shadow: 0 4px 22px rgba(41, 41, 68, 0.05);
+    border-radius: 10px;
+    border-top: none;
+    margin-top: 0;
+    transition: max-height ease-in-out 0.5s;
+    max-height: 0;
+    overflow: hidden;
+
+    .panel-content {
+      padding: 30px;
+    }
+
+    &.active {
+      max-height: 300px;
+    }
+  }
+}
