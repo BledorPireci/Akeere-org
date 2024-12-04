@@ -17,7 +17,7 @@ export default function Testimonials() {
         <div className="testimonialSection">
             <div className="title">
                 <img src={clover}/>
-                <h2>What do we do!</h2>
+                <h2>Testimonials</h2>
             </div>
             <div className="testimonialWrapper">
                 {testimonialData.map((testimonial, index) => (

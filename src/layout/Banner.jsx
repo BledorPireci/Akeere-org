@@ -3,7 +3,7 @@ import Blob from '../assets/vectors/blob.svg'
 import "../scss/sections/_banner.scss"
 export default function Banner() {
     return (
-        <div className="containerBanner">
+        <div id="home" className="containerBanner">
             <div className="bannerBlob">
                 <div className="blobContainer">
                     <img src={Blob}/>
