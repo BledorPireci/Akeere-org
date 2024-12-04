@@ -1,0 +1,312 @@
+.blog-page {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .blog-content {
+        margin-top: 2rem;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .metadata {
+            color: #666;
+            margin-bottom: 2rem;
+            
+            span {
+                margin-right: 1rem;
+            }
+        }
+
+        .carousel {
+            margin-bottom: 2rem;
+            position: relative;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+
+            .slide {
+                background: none;
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+                max-height: 500px;
+                object-fit: contain;
+                border-radius: 8px;
+            }
+
+            // Custom arrow styles
+            .control-arrow {
+                background: rgba(255, 255, 255, 0.8) !important;
+                height: 40px !important;
+                width: 40px !important;
+                border-radius: 50% !important;
+                top: 50% !important;
+                transform: translateY(-50%) !important;
+                opacity: 1 !important;
+                transition: all 0.3s ease !important;
+                
+                &:hover {
+                    background: rgba(255, 255, 255, 0.95) !important;
+                }
+
+                &::before {
+                    border: none !important;
+                    content: '' !important;
+                    display: block !important;
+                    width: 12px !important;
+                    height: 12px !important;
+                    border-top: 2px solid #000 !important;
+                    border-right: 2px solid #000 !important;
+                    position: absolute !important;
+                    top: 50% !important;
+                    left: 50% !important;
+                }
+            }
+
+            .control-prev {
+                left: 20px !important;
+                
+                &::before {
+                    transform: translate(-35%, -50%) rotate(-135deg) !important;
+                }
+            }
+
+            .control-next {
+                right: 20px !important;
+                
+                &::before {
+                    transform: translate(-65%, -50%) rotate(45deg) !important;
+                }
+            }
+
+            // Hide default indicators
+            .control-dots {
+                .dot {
+                    box-shadow: none !important;
+                    background: #ccc !important;
+                    opacity: 0.5 !important;
+
+                    &.selected {
+                        background: #000 !important;
+                        opacity: 1 !important;
+                    }
+                }
+            }
+        }
+
+        .content {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            padding: 0 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+
+            h2 {
+                font-size: 2rem;
+                margin: 2rem 0 1rem;
+                color: #333;
+            }
+
+            h3 {
+                font-size: 1.5rem;
+                margin: 1.5rem 0 1rem;
+                color: #444;
+            }
+
+            h4 {
+                font-size: 1.2rem;
+                margin: 1rem 0 0.5rem;
+                color: #555;
+            }
+
+            p {
+                margin-bottom: 1.2rem;
+            }
+
+            ul {
+                margin: 0.5rem 0 1.5rem 1.5rem;
+                
+                li {
+                    margin-bottom: 0.5rem;
+                    position: relative;
+                    padding-left: 0.5rem;
+                    
+                    &::before {
+                        content: "•";
+                        position: absolute;
+                        left: -1rem;
+                        color: #666;
+                    }
+                }
+            }
+
+            .day-section {
+                margin: 2.5rem 0;
+                padding: 0;
+
+                h3 {
+                    color: #2c3e50;
+                    border-bottom: 2px solid #e0e0e0;
+                    padding-bottom: 0.5rem;
+                    margin-bottom: 1.5rem;
+                }
+
+                .activities {
+                    .activity {
+                        margin-bottom: 1.5rem;
+
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+
+                        h4 {
+                            color: #34495e;
+                            margin-bottom: 0.8rem;
+                        }
+
+                        ul {
+                            padding: 1rem 1rem 1rem 2.5rem;
+                            
+                            li {
+                                margin-bottom: 0.5rem;
+                                
+                                &:last-child {
+                                    margin-bottom: 0;
+                                }
+                            }
+                        }
+
+                        p {
+                            padding: 0.5rem 0;
+                            margin-bottom: 0.5rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        button {
+            margin-top: 2rem;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-page {
+        .blog-content {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .content {
+                font-size: 1rem;
+                padding: 0 0.5rem;
+                max-width: 100%;
+
+                h2 {
+                    font-size: 1.8rem;
+                }
+
+                h3 {
+                    font-size: 1.3rem;
+                }
+
+                h4 {
+                    font-size: 1.1rem;
+                }
+
+                .day-section {
+                    margin: 1.5rem 0;
+                    padding: 0;
+
+                    .activities {
+                        .activity {
+                            ul {
+                                padding: 0.8rem 0.8rem 0.8rem 2rem;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .carousel {
+                max-width: 100%;
+
+                img {
+                    max-height: 400px;
+                }
+
+                .control-arrow {
+                    height: 32px !important;
+                    width: 32px !important;
+
+                    &::before {
+                        width: 10px !important;
+                        height: 10px !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-page {
+        .blog-content {
+            .content {
+                padding: 0 0.5rem;
+
+                ul {
+                    padding: 0.8rem 0.8rem 0.8rem 1rem;
+                    margin-left: 0.5rem;
+                    
+                    li {
+                        padding-left: 0.3rem;
+                        
+                        &::before {
+                            left: -0.8rem;
+                        }
+                    }
+                }
+
+                .day-section {
+                    .activities {
+                        .activity {
+                            ul {
+                                padding: 0.8rem 0.8rem 0.8rem 1rem;
+                                margin-left: 0.5rem;
+                                
+                                li {
+                                    padding-left: 0.3rem;
+                                    
+                                    &::before {
+                                        left: -0.8rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Add better spacing for sections starting with "Dita"
+.content {
+    p {
+        &[class*="Dita"] {
+            margin-top: 2rem;
+            font-weight: 500;
+        }
+    }
+}
