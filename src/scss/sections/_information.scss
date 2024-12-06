@@ -1,14 +1,16 @@
 .information {
-  padding-bottom: 60px;
+  margin: 0 30px 30px;
+
   .title {
     display: flex;
     justify-content: left;
     align-items: center;
     margin-bottom: 30px;
-    margin-left: 30px;
+
     @media (max-width: 768px) {
       justify-content: center;
     }
+
     img {
       width: 30px;
       height: 30px;
@@ -20,243 +22,131 @@
       color: var(--linksText-color);
       font-family: Poppins;
       font-weight: normal;
+
+      @media (max-width: 768px) {
+        font-size: 24px;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 20px;
+      }
     }
   }
+
   .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: var(--linksText-color);
     .info-wrapper {
       display: flex;
-      gap: 40px;
+      flex-wrap: wrap;
+      width: 100%;
 
-      @media (max-width: 1400px) {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      h2 {
-        font-weight: 500;
-        font-size: 27px;
-        color: var(--linksText-color);
-        padding-bottom: 30px;
-        padding-top: 40px;
-
-        @media (max-width: 768px) {
-          text-align: center;
-        }
-      }
-
-      .blog-section {
-        flex: 1 0 calc(50% - 30px);
-        max-width: calc(50% - 30px);
-
-        @media (max-width: 1400px) {
-          flex: 1 0 100%;
-          max-width: 100%;
-          width: 100%;
-        }
-
-        .blogs-wrapper-all {
-          display: flex;
-          gap: 30px;
-          align-items: flex-start;
-
-          @media (max-width: 1400px) {
-            justify-content: center;
-          }
-
-          @media (max-width: 768px) {
-            flex-direction: column;
-            align-items: center;
-          }
-
-          .blog-card {
-            flex: 1 0 calc(50% - 30px);
-            max-width: calc(50% - 15px);
-
-            @media (max-width: 1400px) {
-              max-width: 400px;
-            }
-
-            background: var(--firstCardColor);
-            border-width: 0 1px 1px 1px;
-            border-style: solid;
-            border-color: #f1f1f1;
-            box-shadow: 0 4px 22px rgba(41, 41, 68, 0.05);
-            border-radius: 8px;
-            overflow: hidden;
-
-            @media (max-width: 768px) {
-              width: 100%;
-            }
-
-            .img-blog {
-              img {
-                object-fit: cover;
-                width: 100%;
-              }
-
-              @media (max-width: 768px) {
-                width: 100%;
-              }
-            }
-
-            .text-blog {
-              padding: 30px;
-
-              @media (max-width: 768px) {
-                padding: 45px;
-              }
-
-              h4 {
-                margin: 0;
-                font-weight: 400;
-                font-size: 14px;
-                line-height: 20px;
-                letter-spacing: 0.5em;
-                text-transform: uppercase;
-                color: var(--linksText-color);
-                padding-bottom: 15px;
-              }
-
-              h3 {
-                margin: 0;
-                font-weight: 500;
-                font-size: 21px;
-                color: var(--linksText-color);
-                padding-bottom: 15px;
-              }
-
-              p {
-                margin: 0;
-                font-weight: 400;
-                font-size: 15px;
-                color: var(--linksText-color);
-              }
-            }
-          }
-        }
-      }
-
+      .blog-section,
       .accordion {
-        width: 100%;
-        @media (max-width: 1400px) {
-          flex: 1 0 100%;
-          max-width: 100%;
+        flex: 1 1 48%;
+        box-sizing: border-box;
+        border-radius: 8px;
+        overflow: hidden;
+        margin-bottom: 20px;
+        padding: 20px;
+      }
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .container {
+      flex-direction: column;
+
+      .info-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+
+        .blog-section {
+          flex: 1 1 100%;
+          display: flex;
+          flex-wrap: wrap;
+
+          .blogs-wrapper-all {
+            flex: 1 1 100%;
+            display: flex;
+            flex-wrap: wrap;
+
+            .blog-card {
+              flex: 1 1 48%;
+              margin-bottom: 20px;
+            }
+          }
+        }
+
+        .accordion {
+          order: 2;
           width: 100%;
         }
+      }
+    }
+  }
 
-        h2 {
-          @media (max-width: 768px) {
-            padding-bottom: 70px;
-          }
+  @media (max-width: 768px) {
+    margin: 0 16px 24px;
+    
+    .title {
+      margin-bottom: 20px;
+      
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
 
-          @media (max-width: 540px) {
-            margin: 0 auto;
-            text-align: center;
-            word-wrap: break-word;
-          }
+    .container {
+      .info-wrapper {
+        gap: 16px;
+        
+        .blog-section,
+        .accordion {
+          flex: 1 1 100%;
+          padding: 16px;
+          margin-bottom: 16px;
+          border-radius: 12px;
         }
 
-        .accordion-wrapper {
-          max-width: 750px;
-
-          @media (max-width: 1400px) {
-            margin: 0 auto;
-          }
-
-          @media (max-width: 540px) {
-            max-width: 100%;
-          }
-
-          @media (max-width: 412px) {
-            max-width: 93%;
-            margin: 0 auto;
-          }
-
-          .accordion-btn-wrapper {
-            position: relative;
-          }
-
-          .accordion-btn {
-            font-size: 18px;
-            display: block;
-            margin: 0;
-            text-align: left;
-            cursor: pointer;
-            width: 100%;
-            padding: 38px 90px;
-            background: var(--firstCardColor);
-            border: 1px solid #f1f1f1;
-            box-shadow: 0 4px 22px rgba(41, 41, 68, 0.05);
-            border-radius: 10px;
-            position: relative;
-            color: var(--linksText-color);
-
-            &:hover {
-              color: var(--sectionContentColor);
-            }
-
-            span {
-              word-wrap: break-word;
-              line-height: 1.5;
-            }
-
-            @media (max-width: 540px) {
+        .blog-section {
+          .blogs-wrapper-all {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            
+            .blog-card {
+              flex: 0 0 auto;
               width: 100%;
-              text-align: left;
-              padding: 20px 40px 20px 20px;
-            }
-
-            .btn-accordion-right-icon {
-              position: absolute;
-              top: 50%;
-              transform: translateY(-50%);
-              left: 36px;
-
-              @media (max-width: 540px) {
-                position: static;
-                margin-bottom: 20px;
-                width: 25px;
-                transform: none;
-                display: block;
-              }
-            }
-
-            .btn-accordion-left-icon {
-              position: absolute;
-              top: 50%;
-              transform: translateY(-50%);
-              right: 36px;
-
-              @media (max-width: 540px) {
-                right: -11px;
-                top: 35%;
-              }
+              min-height: 150px;
+              height: auto;
+              margin-bottom: 0;
+              
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              overflow: visible;
             }
           }
+        }
+      }
+    }
+  }
 
-          .panel {
-            display: block;
-            align-items: center;
-            width: 100%;
-            margin-bottom: 30px;
-            background: #fdfdfd;
-            color: var(--linksText-color);
-            box-shadow: 0 4px 22px rgba(41, 41, 68, 0.05);
-            border-radius: 10px;
-            border-top: none;
-            margin-top: 0;
-            transition: max-height ease-in-out 0.5s;
-            max-height: 0;
-            overflow: hidden;
-
-            .panel-content {
-              padding: 30px;
-            }
-
-            &.active {
-              max-height: 300px;
-            }
-          }
+  @media (max-width: 480px) {
+    margin: 0 12px 20px;
+    
+    .container {
+      .info-wrapper {
+        gap: 12px;
+        
+        .blog-section,
+        .accordion {
+          padding: 14px;
+          margin-bottom: 12px;
         }
       }
     }

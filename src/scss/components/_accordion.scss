@@ -1,85 +1,64 @@
 .accordion-wrapper {
-  width: 100%;
-
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: stretch;
+  
   .accordion-btn-wrapper {
-    position: relative;
-    margin-bottom: 20px;
-  }
-
-  .accordion-btn {
-    font-size: 18px;
-    display: block;
-    margin: 0;
-    text-align: left;
-    cursor: pointer;
-    width: 100%;
-    padding: 38px 90px;
-    background: var(--firstCardColor);
-    border: 1px solid #f1f1f1;
-    box-shadow: 0 4px 22px rgba(41, 41, 68, 0.05);
-    border-radius: 10px;
-    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--firstCardColor);
     color: var(--linksText-color);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 
-    span {
-      word-wrap: break-word;
-      line-height: 1.5;
-    }
-
-    @media (max-width: 540px) {
+    .accordion-btn {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       width: 100%;
-      text-align: left;
-      padding: 20px 40px 20px 20px;
+      padding: 15px;
+      background-color: var(--button-background-color);
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &.active {
+        background-color: var(--button-active-background-color);
+      }
+
+      img {
+        width: 20px;
+        height: 20px;
+      }
+
+      span {
+        flex-grow: 1;
+        text-align: left;
+        margin-left: 10px;
+        font-size: 16px;
+        color: var(--linksText-color)
+      }
     }
 
-    .btn-accordion-right-icon {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      left: 36px;
+    .panel {
+      padding: 15px;
+      background-color: var(--panel-background-color);
+      display: none;
 
-      @media (max-width: 540px) {
-        position: static;
-        margin-bottom: 20px;
-        width: 25px;
-        transform: none;
+      &.active {
         display: block;
       }
-    }
 
-    .btn-accordion-left-icon {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      right: 36px;
-
-      @media (max-width: 540px) {
-        right: -11px;
-        top: 35%;
+      .panel-content {
+        p {
+          margin: 0;
+          font-size: 14px;
+          color: var(--text-color);
+        }
       }
-    }
-  }
-
-  .panel {
-    display: block;
-    align-items: center;
-    width: 100%;
-    background: var(--firstCardColor);
-    color: var(--linksText-color);
-    box-shadow: 0 4px 22px rgba(41, 41, 68, 0.05);
-    border-radius: 10px;
-    border-top: none;
-    margin-top: 0;
-    transition: max-height ease-in-out 0.5s;
-    max-height: 0;
-    overflow: hidden;
-
-    .panel-content {
-      padding: 30px;
-    }
-
-    &.active {
-      max-height: 300px;
     }
   }
 }

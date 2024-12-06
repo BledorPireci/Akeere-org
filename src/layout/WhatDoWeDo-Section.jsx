@@ -9,22 +9,24 @@ const WhatDoWeDoSection = () => {
     const cardDataArray = [
         {
             imgSrc: photo1,
-            title: "Harnessing Nature's Energy",
-            description: "Our wind turbine projects seamlessly harness nature's energy, driving us toward a sustainable future. " +
-                "By capturing the power of the wind, we generate clean electricity while fostering environmental stewardship and community engagement. " +
-                "These turbines symbolize our commitment to a greener world through innovative and responsible energy solutions."
+            title: "Promovimi i Energjisë së Ripërtëritshme",
+            description: "Ne punojmë për të promovuar përdorimin e burimeve të ripërtëritshme të energjisë (BRE) dhe " +
+                "efiçiencën e energjisë. Përmes ekspertizës sonë, ne kontribuojmë në zhvillimin e politikave të " +
+                "qëndrueshme energjetike dhe mbrojtjen e mjedisit jetësor."
         },
         {
             imgSrc: photo2,
-            title: "Illuminating a Sustainable Future",
-            description: "Embark on our solar initiatives, where advanced panels illuminate a cleaner and brighter path for future generations. " +
-                "Through state-of-the-art solar technology, we are committed to sustainable energy solutions that light the way toward a greener and more radiant tomorrow."
+            title: "Efiçienca e Energjisë",
+            description: "Fokusohemi në edukimin dhe implementimin e praktikave për shfrytëzimin racional të energjisë " +
+                "në ndërtesa dhe industri. Ne ofrojmë zgjidhje për kursimin e energjisë dhe aplikimin e rregullave " +
+                "ndërtimore për efiçiencë energjetike."
         },
         {
             imgSrc: photo3,
-            title: "Pioneering Tomorrow's Energy Landscape",
-            description: "Uncover how our renewable projects shape a sustainable future with innovative, eco-friendly solutions. " +
-                "By pioneering environmentally conscious initiatives, we are dedicated to forging a path towards a cleaner and more resilient tomorrow."
+            title: "Bashkëpunimi dhe Zhvillimi",
+            description: "Krijojmë ura bashkëpunimi me institucione vendore dhe ndërkombëtare në fushën e energjisë " +
+                "së ripërtëritshme. Angazhohemi në reformat e politikave fiskale dhe gjetjen e fondeve për zhvillimin " +
+                "e projekteve të BRE dhe EE."
         }
     ];
 

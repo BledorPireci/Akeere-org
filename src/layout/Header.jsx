@@ -91,22 +91,12 @@ const Header = () => {
                                     </Link>
                                 </li>
                                 <li>
-                                    <a 
-                                        href="#projects" 
-                                        onClick={scrollToSection}
-                                        className={activeSection === 'projects' ? 'active' : ''}
-                                    >
-                                        Projects
-                                    </a>
-                                </li>
-                                <li>
-                                    <a 
-                                        href="#about-us" 
-                                        onClick={scrollToSection}
-                                        className={activeSection === 'about-us' ? 'active' : ''}
+                                    <Link 
+                                        to="/about"
+                                        className={window.location.pathname === '/about' ? 'active' : ''}
                                     >
                                         About Us
-                                    </a>
+                                    </Link>
                                 </li>
                             </ul>
                         </nav>

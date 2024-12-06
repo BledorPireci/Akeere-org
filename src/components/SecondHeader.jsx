@@ -48,16 +48,8 @@ const Header = () => {
                                 </li>
                                 <li>
                                     <Link 
-                                        to="/#projects"
-                                        className={window.location.hash === '#projects' ? 'active' : ''}
-                                    >
-                                        Projects
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link 
-                                        to="/#about-us"
-                                        className={window.location.hash === '#about-us' ? 'active' : ''}
+                                        to="/about"
+                                        className={window.location.pathname === '/about' ? 'active' : ''}
                                     >
                                         About Us
                                     </Link>

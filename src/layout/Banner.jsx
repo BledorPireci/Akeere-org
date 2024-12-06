@@ -15,12 +15,12 @@ export default function Banner() {
             <div className="headerText">
                 <div className="firstText">
                     <h2>
-                        Empowering Tomorrow, Sustainably Today:
+                        Inovacion për një të Nesërme më të Gjelbër:
                     </h2>
                 </div>
                 <div className="secondText">
                     <h2>
-                        Join us in building a cleaner, sustainable future
+                        Transformimi i Ideve në Zgjidhje të Qëndrueshme
                     </h2>
                 </div>
             </div>

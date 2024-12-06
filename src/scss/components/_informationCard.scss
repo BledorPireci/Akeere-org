@@ -1,80 +1,57 @@
 .blogs-wrapper-all {
   display: flex;
-  gap: 30px;
-  align-items: flex-start;
-
-  @media (max-width: 1400px) {
-    justify-content: center;
-  }
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: center;
-  }
+  flex-direction: row;
+  gap: 20px;
+  align-items: stretch;
 
   .blog-card {
-    flex: 1 0 calc(50% - 30px);
-    max-width: calc(50% - 15px);
-    cursor: pointer;
-    @media (max-width: 1400px) {
-      max-width: 400px;
-    }
-
-    background: var(--firstCardColor);
-    border-width: 0 1px 1px 1px;
-    border-style: solid;
-    border-color: #f1f1f1;
-    box-shadow: 0 4px 22px rgba(41, 41, 68, 0.05);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
     border-radius: 8px;
     overflow: hidden;
-
-    @media (max-width: 768px) {
-      width: 100%;
-    }
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--firstCardColor);
 
     .img-blog {
       img {
+        width: 100%;
+        height: 200px;
         object-fit: cover;
-        width: 100%;
-      }
-
-      @media (max-width: 768px) {
-        width: 100%;
+        border-bottom: 1px solid #ddd;
+        border-radius: 8px 8px 0 0;
       }
     }
 
     .text-blog {
-      padding: 30px;
-
-      @media (max-width: 768px) {
-        padding: 45px;
-      }
+      font-family: Poppins;
+      padding: 15px;
+      flex-grow: 1;
 
       h4 {
         margin: 0;
+        font-size: 15px;
+        letter-spacing: 5px;
         font-weight: 400;
-        font-size: 14px;
-        line-height: 20px;
-        letter-spacing: 0.5em;
-        text-transform: uppercase;
-        color: var(--grayText-color);
-        padding-bottom: 15px;
       }
 
       h3 {
-        margin: 0;
-        font-weight: 500;
-        font-size: 21px;
-        color: var(--blueText-color);
-        padding-bottom: 15px;
+        margin: 10px 0;
+        font-size: 18px;
+        font-weight: 500; 
       }
 
       p {
-        margin: 0;
-        font-weight: 400;
-        font-size: 15px;
-        color: var(--grayText-color);
+        font-size: 14px;
       }
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    
+    .blog-card {
+      width: 100%;
     }
   }
 }
