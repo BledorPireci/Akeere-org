@@ -48,7 +48,7 @@ const Information = () => {
         <section id="information" className="information">
             <div className="title">
                 <img src={clover}/>
-                <h2>Articles and Frequently asked questions</h2>
+                <h2>Artikuj dhe Pyetje të Shpeshta.</h2>
             </div>
             <div className="container">
                 <div className="info-wrapper">

@@ -34,7 +34,7 @@ const WhatDoWeDoSection = () => {
         <div className="WhatWrapper">
             <div className="title">
                 <img src={clover}/>
-                <h2>What do we do!</h2>
+                <h2>Çfarë bëjmë?!</h2>
             </div>
             <div className="containerWhatDo">
                 {cardDataArray.map((cardData, index) => (
