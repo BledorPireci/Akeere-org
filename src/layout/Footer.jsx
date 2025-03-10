@@ -3,8 +3,15 @@ import AkereeLogo from '../assets/photos/akereelogo.png';
 import { FaFacebookF } from "react-icons/fa";
 import { MdOutlineMail } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 export default function Footer() {
+    const [showDeveloperInfo, setShowDeveloperInfo] = useState(false);
+    
+    const toggleInfo = () => {
+        setShowDeveloperInfo(!showDeveloperInfo);
+    };
+
     return (
         <footer>
             <div className="footerContainer">
@@ -14,7 +21,33 @@ export default function Footer() {
                     </a>
                 </div>
                 <div className="footerText">
-                    <h2>Copyright © 2023 AKEREE. All rights reserved.</h2>
+                    <h2 onClick={toggleInfo} style={{ cursor: 'pointer' }}>
+                        {showDeveloperInfo 
+                            ? (
+                                <>
+                                  Developed by <span style={{ fontWeight: 'bold', color: '#1a4531' }}>Bledor Pireci</span>. Check out my portfolio at{" "}
+                                  <a 
+                                    href="https://www.bledorpireci.dev" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    onClick={(e) => e.stopPropagation()}
+                                    style={{
+                                      color: '#4a90e2',
+                                      textDecoration: 'underline',
+                                      fontWeight: 'bold',
+                                      transition: 'color 0.3s ease',
+                                      position: 'relative',
+                                      padding: '0 2px'
+                                    }}
+                                    onMouseOver={(e) => e.target.style.color = '#276a4b'}
+                                    onMouseOut={(e) => e.target.style.color = '#1a4531'}
+                                  >
+                                    www.bledorpireci.dev
+                                  </a>
+                                </>
+                              )
+                            : "Copyright © 2023 AKEREE. All rights reserved."}
+                    </h2>
                 </div>
                 <div className="footerIcons">
                     <div className="icon">
