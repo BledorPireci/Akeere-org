@@ -4,9 +4,12 @@ import SummerSchool from "./pages/SummerSchool";
 import BlogPage from "./components/BlogPage";
 import InformationBlog from "./components/InformationBlog";
 import AboutPage from "./pages/AboutPage";
+import ScrollToTop from "./components/ScrollToTop";
+
 function App() {
     return (
         <BrowserRouter>
+            <ScrollToTop />
             <Routes>
                 <Route path="/" element={<MainPage />} />
                 <Route path="/summer-school" element={<SummerSchool />} />

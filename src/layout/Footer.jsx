@@ -1,36 +1,31 @@
 import "../scss/layout/_footer.scss"
 import AkereeLogo from '../assets/photos/akereelogo.png';
 import { FaFacebookF } from "react-icons/fa";
-import { FaLinkedinIn } from "react-icons/fa6";
-import { FaInstagram } from "react-icons/fa6";
 import { MdOutlineMail } from "react-icons/md";
-
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
     return (
         <footer>
             <div className="footerContainer">
                 <div className="footerLogo">
-                    <Link to="/mainPage">
+                    <a href="/" onClick={() => window.scrollTo(0, 0)}>
                         <img src={AkereeLogo} alt="" />
-                    </Link>
+                    </a>
                 </div>
                 <div className="footerText">
                     <h2>Copyright © 2023 AKEREE. All rights reserved.</h2>
                 </div>
                 <div className="footerIcons">
                     <div className="icon">
-                        <FaFacebookF />
+                        <a href="https://www.facebook.com/akereeSummerSchool" target="_blank" rel="noopener noreferrer">
+                            <FaFacebookF />
+                        </a>
                     </div>
                     <div className="icon">
-                        <FaLinkedinIn />
-                    </div>
-                    <div className="icon">
-                        <FaInstagram />
-                    </div>
-                    <div className="icon">
-                        <MdOutlineMail />
+                        <a href="mailto:akeree@gmail.com" target="_blank" rel="noopener noreferrer">
+                            <MdOutlineMail />
+                        </a>
                     </div>
                 </div>
             </div>

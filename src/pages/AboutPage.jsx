@@ -1,10 +1,10 @@
 import React from 'react';
-import SecondHeader from '../components/SecondHeader';
+import Header from '../layout/Header';
 import '../scss/sections/_aboutPage.scss';
 export default function AboutPage() {
     return (
         <div className="about-page">
-            <SecondHeader />
+            <Header/>
             <div className="about-container">
                 <section className="about-section">
                     <h2>Qëllimi</h2>

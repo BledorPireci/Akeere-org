@@ -4,7 +4,7 @@ import {animated, useSpring} from "@react-spring/web";
 import PropTypes from "prop-types";
 import Blog from "../components/Blog";
 import "../scss/sections/_summerSchool.scss"
-import SecondHeader from "../components/SecondHeader";
+import Header from "../layout/Header";
 
 function AnimatedSection({ children }) {
     const [ref, inView] = useInView({
@@ -28,7 +28,7 @@ AnimatedSection.propTypes = {
 export default function SummerSchool() {
     return (
         <div className="summer-school">
-            <SecondHeader />
+            <Header/>
             <AnimatedSection>
                 <Blog/>
             </AnimatedSection>

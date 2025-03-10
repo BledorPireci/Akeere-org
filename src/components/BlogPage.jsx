@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { blogPosts } from './Blog';
-import SecondHeader from './SecondHeader';
-import { Carousel } from 'react-responsive-carousel';
+import Header from '../layout/Header';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import '../scss/components/_blogPage.scss';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import sch2024_1 from '../assets/photos/2024/sch2024-1.jpg';
 import sch2024_2 from '../assets/photos/2024/sch2024-2.jpg';
 import sch2024_3 from '../assets/photos/2024/sch2024-3.jpg';
@@ -145,6 +148,53 @@ import sch2014_7 from '../assets/photos/2014/sch2014-7.jpg';
 export default function BlogPage() {
     const { id } = useParams();
     const navigate = useNavigate();
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [activeSlide, setActiveSlide] = useState(0);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const [swiperRef, setSwiperRef] = useState(null);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    const handleImageClick = () => {
+        if (windowWidth <= 1024) {
+            setIsModalOpen(true);
+            if (swiperRef) {
+                swiperRef.autoplay.stop();
+            }
+        }
+    };
+
+    const handleModalClose = () => {
+        setIsModalOpen(false);
+        if (swiperRef) {
+            swiperRef.autoplay.start();
+        }
+    };
+
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (e.key === 'Escape' && isModalOpen) {
+                handleModalClose();
+            }
+        };
+
+        if (isModalOpen) {
+            document.body.classList.add('blog-modal-open');
+            window.addEventListener('keydown', handleKeyDown);
+        }
+
+        return () => {
+            document.body.classList.remove('blog-modal-open');
+            window.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [isModalOpen]);
 
     const blogDetails = {
         1: {
@@ -808,35 +858,6 @@ export default function BlogPage() {
         return <div>Blog post not found</div>;
     }
 
-    const arrowStyles = {
-        position: 'absolute',
-        zIndex: 2,
-        top: 'calc(50% - 25px)',
-        cursor: 'pointer',
-    };
-
-    const renderArrowPrev = (onClickHandler, hasPrev, label) =>
-        hasPrev && (
-            <button 
-                type="button" 
-                onClick={onClickHandler} 
-                title={label} 
-                style={{ ...arrowStyles, left: 15 }}
-                className="control-arrow control-prev"
-            />
-        );
-
-    const renderArrowNext = (onClickHandler, hasNext, label) =>
-        hasNext && (
-            <button 
-                type="button" 
-                onClick={onClickHandler} 
-                title={label} 
-                style={{ ...arrowStyles, right: 15 }}
-                className="control-arrow control-next"
-            />
-        );
-
     const renderContent = () => {
         if (details.intro) {
             return (
@@ -893,32 +914,70 @@ export default function BlogPage() {
     };
 
     return (
-        <div className="blog-page">
-            <SecondHeader />
-            <div className="blog-content">
+        <div className="summer-school-blog">
+            <Header />
+            <div className="summer-school-blog-content">
                 <h1>{post.title}</h1>
-                <div className="metadata">
+                <div className="summer-school-metadata">
                     <span>{post.date}</span>
                     <span>{post.author}</span>
                 </div>
-                <Carousel 
-                    className="carousel"
-                    renderArrowPrev={renderArrowPrev}
-                    renderArrowNext={renderArrowNext}
-                    showStatus={false}
-                    infiniteLoop={true}
-                    showThumbs={false}
-                >
-                    {details.images.map((image, index) => (
-                        <div key={index}>
-                            <img src={image} alt={`Slide ${index}`} />
-                        </div>
-                    ))}
-                </Carousel>
-                <div className="content">
+                <div className="summer-school-blog-hero">
+                    <Swiper
+                        modules={[Navigation, Pagination, Autoplay]}
+                        spaceBetween={0}
+                        slidesPerView={1}
+                        navigation
+                        pagination={{ clickable: true }}
+                        autoplay={{ delay: 5000, disableOnInteraction: false }}
+                        className="summer-school-carousel"
+                        onSlideChange={(swiper) => setActiveSlide(swiper.activeIndex)}
+                        onSwiper={setSwiperRef}
+                    >
+                        {details.images.map((image, index) => (
+                            <SwiperSlide key={index}>
+                                <div 
+                                    className="summer-school-carousel-image" 
+                                    style={{ backgroundImage: `url(${image})` }}
+                                    onClick={handleImageClick}
+                                />
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </div>
+
+                {isModalOpen && windowWidth <= 1024 && (
+                    <div className="summer-school-image-modal">
+                        <button className="summer-school-modal-close" onClick={handleModalClose}>
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                            </svg>
+                        </button>
+                        <Swiper
+                            modules={[Navigation, Pagination]}
+                            spaceBetween={0}
+                            slidesPerView={1}
+                            navigation
+                            pagination={{ clickable: true }}
+                            initialSlide={activeSlide}
+                            className="summer-school-modal-carousel"
+                            loop={false}
+                        >
+                            {details.images.map((image, index) => (
+                                <SwiperSlide key={index}>
+                                    <img src={image} alt={`Slide ${index + 1}`} />
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+                    </div>
+                )}
+
+                <div className="summer-school-content">
                     {renderContent()}
                 </div>
-                <button onClick={() => navigate(-1)}>← Back</button>
+                <button className="summer-school-back-button" onClick={() => { 
+                    navigate(-1); 
+                }}>← Back</button>
             </div>
         </div>
     );
