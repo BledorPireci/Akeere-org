@@ -32,7 +32,7 @@ export default function Footer() {
                                     rel="noopener noreferrer"
                                     onClick={(e) => e.stopPropagation()}
                                     style={{
-                                      color: '#4a90e2',
+                                      color: '#1a4531',
                                       textDecoration: 'underline',
                                       fontWeight: 'bold',
                                       transition: 'color 0.3s ease',
