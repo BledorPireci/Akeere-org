@@ -933,6 +933,10 @@ export default function BlogPage() {
                         className="summer-school-carousel"
                         onSlideChange={(swiper) => setActiveSlide(swiper.activeIndex)}
                         onSwiper={setSwiperRef}
+                        watchSlidesProgress={false}
+                        watchOverflow={true}
+                        slidesOffsetBefore={0}
+                        slidesOffsetAfter={0}
                     >
                         {details.images.map((image, index) => (
                             <SwiperSlide key={index}>
@@ -962,6 +966,10 @@ export default function BlogPage() {
                             initialSlide={activeSlide}
                             className="summer-school-modal-carousel"
                             loop={false}
+                            watchSlidesProgress={false}
+                            watchOverflow={true}
+                            slidesOffsetBefore={0}
+                            slidesOffsetAfter={0}
                         >
                             {details.images.map((image, index) => (
                                 <SwiperSlide key={index}>
