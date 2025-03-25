@@ -2,72 +2,167 @@ footer {
   background-color: var(--bannerColor);
 
   .footerContainer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
-    padding: 20px;
-
+    text-align: center;
+    padding: 30px 20px;
+    
     .footerLogo {
-      width: 120px;
-      height: 120px;
-      padding-bottom: 20px;
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      }
+        margin-bottom: 20px;
+        
+        img {
+            max-width: 120px;
+            height: auto;
+        }
     }
 
-    .footerText {
-      padding-bottom: 20px;
-      text-align: center;
-      h2 {
-          font-size: 18px;
-          color: var(--linksText-color);
-          font-weight: normal;
-          cursor: pointer;
-        &:hover{
-          text-decoration: underline;
+    .contact-section {
+        margin: 20px 0;
+
+        h3 {
+            color: #1a4531;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            font-weight: 600;
         }
-      }
+
+        .contact-list {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+
+            .contact-item {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                
+                span {
+                    color: #1a4531;
+                    font-weight: 500;
+                }
+
+                .separator {
+                    color: #666;
+                    margin: 0 5px;
+                }
+
+                a {
+                    color: #276a4b;
+                    text-decoration: none;
+                    transition: color 0.3s ease;
+                    font-weight: 500;
+
+                    &:hover {
+                        color: #1a4531;
+                    }
+                }
+
+                .facebook-link {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    text-decoration: none;
+                    color: #1a4531;
+                    transition: color 0.3s ease;
+
+                    .fb-icon {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 32px;
+                        height: 32px;
+                        background-color: #1a4531;
+                        border-radius: 50%;
+                        color: white;
+                        transition: background-color 0.3s ease;
+                    }
+
+                    .fb-text {
+                        font-size: 0.9rem;
+                        color: #1a4531;
+                    }
+
+                    &:hover {
+                        .fb-icon {
+                            background-color: #276a4b;
+                        }
+                        .fb-text {
+                            color: #276a4b;
+                        }
+                    }
+                }
+            }
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+
+            a {
+                background: #1a4531;
+                color: white;
+                width: 35px;
+                height: 35px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: background-color 0.3s ease;
+
+                &:hover {
+                    background: #276a4b;
+                }
+            }
+        }
     }
 
-    .footerIcons {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 30px;
-
-      .icon {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 50px;
-        height: 50px;
-        border-radius: 50px;
-        background-color: var(--linksText-color);
-        font-size: 25px;
-        color: var(--bannerColor);
-        transition: background-color 0.5s, color 0.5s ease-out;
-
-        a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 100%;
-          height: 100%;
-          color: inherit;
+    .footer-bottom {
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(26, 69, 49, 0.1);
+        color: #666;
+        font-size: 0.9rem;
+        a{
+          color: #1a4531;
+          text-decoration: none;
+          font-weight: 500;
+          &:hover{
+            color: #276a4b;
+          }
         }
-
-        &:hover {
-          background-color: var(--bannerColor);
-          color: var(--linksText-color);
-          border: 2px solid var(--linksText-color);
+        p {
+            cursor: pointer;
         }
-      }
     }
-
   }
+}
+
+@media (max-width: 600px) {
+    .footerContainer {
+        .contact-section {
+            .contact-list {
+                flex-direction: column;
+                gap: 20px;
+                
+                .contact-item {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 10px;
+
+                    .separator {
+                        display: none;
+                    }
+
+                    .facebook-link {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        gap: 10px;
+                    }
+                }
+            }
+        }
+    }
 }

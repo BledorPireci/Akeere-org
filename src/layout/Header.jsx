@@ -182,6 +182,15 @@ const Header = () => {
                             </li>
                             <li className="nav__item">
                                 <a 
+                                    href="/projects"
+                                    onClick={(e) => handleNavigation('/projects', e)}
+                                    className={isLinkActive('/projects') ? 'nav__link nav__link--active' : 'nav__link'}
+                                >
+                                    Projects
+                                </a>
+                            </li>
+                            <li className="nav__item">
+                                <a 
                                     href="/about"
                                     onClick={(e) => handleNavigation('/about', e)}
                                     className={isLinkActive('/about') ? 'nav__link nav__link--active' : 'nav__link'}
@@ -222,6 +231,15 @@ const Header = () => {
                                 className={isLinkActive('/summer-school') ? 'active' : ''}
                             >
                                 Summer School
+                            </a>
+                        </li>
+                        <li className="mobile-menu__item">
+                            <a 
+                                href="/projects"
+                                onClick={(e) => handleNavigation('/projects', e)}
+                                className={isLinkActive('/projects') ? 'active' : ''}
+                            >
+                                Projects
                             </a>
                         </li>
                         <li className="mobile-menu__item">

@@ -30,7 +30,9 @@ export default function SummerSchool() {
         <div className="summer-school">
             <Header/>
             <AnimatedSection>
-                <Blog/>
+                <div className="summer-school-content">
+                    <Blog/>
+                </div>
             </AnimatedSection>
         </div>
     );

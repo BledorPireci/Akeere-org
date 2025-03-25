@@ -5,7 +5,7 @@
   width: 100%;
 }
 
-.blog {
+.SchBlogs {
   &-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
@@ -31,15 +31,15 @@
         transform: translateY(-10px);
         box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         
-        .blog-image {
+        .SchBlogs-image {
           transform: scale(1.05);
         }
         
-        .blog-overlay {
+        .SchBlogs-overlay {
           opacity: 1;
         }
         
-        .read-more {
+        .SchBlogs-readMoreText {
           opacity: 1;
           transform: translateY(0);
         }
@@ -53,7 +53,7 @@
     object-fit: cover;
     transition: transform 0.4s ease;
 
-    &-container {
+    &Container {
       position: relative;
       overflow: hidden;
       aspect-ratio: 16 / 9;
@@ -142,18 +142,18 @@
       }
     }
   }
-}
 
-.read-more {
-  color: white;
-  font-weight: 500;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.3s ease;
-  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  &-readMoreText {
+    color: white;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
 
-  @media (hover: none) {
-    opacity: 1;
-    transform: translateY(0);
+    @media (hover: none) {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }

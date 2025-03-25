@@ -5,7 +5,7 @@ import BlogPage from "./components/BlogPage";
 import InformationBlog from "./components/InformationBlog";
 import AboutPage from "./pages/AboutPage";
 import ScrollToTop from "./components/ScrollToTop";
-
+import ProjectsPage from "./pages/ProjectsPage";
 function App() {
     return (
         <BrowserRouter>
@@ -16,6 +16,7 @@ function App() {
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/blog/:id" element={<BlogPage />} />
                 <Route path="/information-blog/:id" element={<InformationBlog />} />
+                <Route path="/projects" element={<ProjectsPage />} />
             </Routes>
         </BrowserRouter>
     );

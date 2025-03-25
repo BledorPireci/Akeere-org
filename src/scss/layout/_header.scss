@@ -282,3 +282,34 @@ body.menu-open {
 body {
   padding-top: 70px;
 }
+
+.nav-links {
+  a {
+    color: #1a4531;
+    text-decoration: none;
+    font-size: 1.25rem;  // Standardized font size for all links
+    font-weight: 500;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #276a4b;
+    }
+  }
+
+  // If you have specific classes for each link, make sure they inherit the same font size
+  .home-link,
+  .news-link,
+  .summer-link,
+  .projects-link,
+  .about-link {
+    font-size: 1.25rem;  // Force the same size for all links
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    a {
+      font-size: 1.25rem;  // Maintain consistent size on mobile
+    }
+  }
+}

@@ -14,7 +14,15 @@ export default function GetInfo() {
                     <p>Na kontaktoni për të mësuar më shumë rreth zgjidhjeve të qëndrueshme të energjisë dhe si mund të përmirësoni efiçiencën energjetike në projektet tuaja.</p>
                 </div>
                 <div className="booking">
-                    <button className="bookingButton" role="button">Rezervo një konsultim</button>
+                    <button 
+                        className="bookingButton" 
+                        role="button"
+                        onClick={() => window.location.href = 'tel:+38344413241'}
+                        title="Thirr +383 44 413 241"
+                        aria-label="Thirr +383 44 413 241"
+                    >
+                        Rezervo një konsultim
+                    </button>
                 </div>
             </div>
         </div>
