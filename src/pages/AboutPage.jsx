@@ -1,7 +1,25 @@
 import React from 'react';
 import Header from '../layout/Header';
 import '../scss/sections/_aboutPage.scss';
+import posthog from 'posthog-js';
+
 export default function AboutPage() {
+    React.useEffect(() => {
+        posthog.capture('about_page_view', {
+            page_name: 'About',
+            timestamp: new Date().toISOString()
+        });
+    }, []);
+
+    // Track when users interact with team member profiles or other about page elements
+    const handleTeamMemberClick = (memberId, memberName) => {
+        posthog.capture('team_member_profile_click', {
+            member_id: memberId,
+            member_name: memberName,
+            timestamp: new Date().toISOString()
+        });
+    };
+
     return (
         <div className="about-page">
             <Header/>

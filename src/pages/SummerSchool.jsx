@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import Blog from "../components/Blog";
 import "../scss/sections/_summerSchool.scss"
 import Header from "../layout/Header";
+import posthog from 'posthog-js';
 
 function AnimatedSection({ children }) {
     const [ref, inView] = useInView({
@@ -26,6 +27,13 @@ AnimatedSection.propTypes = {
 };
 
 export default function SummerSchool() {
+    React.useEffect(() => {
+        posthog.capture('summer_school_page_view', {
+            page_name: 'Summer School',
+            timestamp: new Date().toISOString()
+        });
+    }, []);
+
     return (
         <div className="summer-school">
             <Header/>

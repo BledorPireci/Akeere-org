@@ -2,6 +2,7 @@ import AkereeLogo from '../assets/photos/akereelogo.png';
 import '../scss/layout/_header.scss';
 import {Link, useNavigate, useLocation} from "react-router-dom";
 import React, { useState, useEffect } from 'react';
+import posthog from 'posthog-js';
 
 const Header = () => {
     const location = useLocation();
@@ -12,6 +13,9 @@ const Header = () => {
 
     const toggleMenu = () => {
         setIsMenuOpen(prev => {
+            posthog.capture('menu_toggle', {
+                action: prev ? 'close' : 'open'
+            });
             document.body.style.overflow = !prev ? 'hidden' : '';
             return !prev;
         });
@@ -23,6 +27,9 @@ const Header = () => {
             document.body.style.overflow = '';
             setIsMenuOpen(false);
         }
+        posthog.capture('navigation_click', {
+            destination: path
+        });
         window.scrollTo(0, 0);
         navigate(path);
     };
