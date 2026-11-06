@@ -3,6 +3,7 @@ import {useInView} from "react-intersection-observer";
 import {animated, useSpring} from "@react-spring/web";
 import PropTypes from "prop-types";
 import Blog from "../components/Blog";
+import SummerSchoolAnnouncement from '../components/SummerSchoolAnnouncement';
 import "../scss/sections/_summerSchool.scss"
 import Header from "../layout/Header";
 import posthog from 'posthog-js';
@@ -37,6 +38,7 @@ export default function SummerSchool() {
     return (
         <div className="summer-school">
             <Header/>
+            <SummerSchoolAnnouncement />
             <AnimatedSection>
                 <div className="summer-school-content">
                     <Blog/>

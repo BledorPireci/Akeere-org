@@ -31,7 +31,7 @@ export default function Footer() {
                         </div>
                         <div className="contact-item">
                             <span>Email:</span>
-                            <a href="mailto:akeree@akeree.org">akeree@akeree.org</a>
+                            <a href="mailto:akeree@gmail.com">akeree@gmail.com</a>
                             <span className="separator">|</span>
                             <a href="https://www.facebook.com/akereeSummerSchool" 
                                target="_blank" 

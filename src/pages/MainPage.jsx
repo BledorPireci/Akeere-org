@@ -11,6 +11,7 @@ import Banner from "../layout/Banner";
 import Information from "../layout/Information";
 import GetInfo from "../layout/GetInfo";
 import Testimonials from "../layout/Testimonials";
+import SummerSchoolAnnouncement from '../components/SummerSchoolAnnouncement';
 import posthog from 'posthog-js';
 
 function AnimatedSection({ children }) {
@@ -73,6 +74,7 @@ export default function MainPage() {
             <AnimatedSection>
                 <Banner />
             </AnimatedSection>
+            <SummerSchoolAnnouncement />
             <AnimatedSection>
                 <Slider />
             </AnimatedSection>
